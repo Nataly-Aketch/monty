@@ -8,6 +8,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
+stack_t *top = NULL;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
