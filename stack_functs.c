@@ -12,7 +12,8 @@ void add_dll_node_push(stack_t **stack, unsigned int x)
        
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
-		return (0);
+		dprintf(STDERR_FILENO, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
 
 	new_node->n = x;
 	new_node->next = top;
