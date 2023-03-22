@@ -3,12 +3,12 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <ctype.h>
 #include <unistd.h>
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
-stack_t *top = NULL;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -37,4 +37,14 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+/*
+int data;*/
+char *line;
+char **lexer(char *line);
+int _isdigit(char *c);
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void (*get_func(char *str))(stack_t**, unsigned int);
+int list_len(stack_t *h);
+void free_list(stack_t *head);
 #endif
