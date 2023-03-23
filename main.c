@@ -46,6 +46,7 @@ int main(int argc, char *argv[])
 	free(line_cpy);
 	free(line);
 	free_list(head);
+	fclose(fd);
 	return (EXIT_SUCCESS);
 }
 /**
