@@ -1,17 +1,5 @@
 #include "monty.h"
 /**
- * print_l - prints a linked list
- * @h: head node
- */
-void print_l(stack_t *h)
-{
-	while (h)
-	{
-		printf("%d\n", h->n);
-		h = h->next;
-	}
-}
-/**
  * main - entry point
  * @argc: argument count
  * @argv: argument vector

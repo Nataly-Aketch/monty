@@ -1,5 +1,17 @@
 #include "monty.h"
 /**
+ * print_l - prints a linked list
+ * @h: head node
+ */
+void print_l(stack_t *h)
+{
+	while (h)
+	{
+		printf("%d\n", h->n);
+		h = h->next;
+	}
+}
+/**
  * _isdigit - checks if number is a digit
  * @c: character to be checked
  * Return: 1 if true, 0 otherwise
@@ -32,8 +44,9 @@ char **lexer(char *str)
 	{
 		av[i] = token;
 		i++;
-		token = strtok(NULL, " ");
+		token = strtok(NULL, " \n");
 	}
+	av[i] = NULL;
 	return (av);
 }
 /**
