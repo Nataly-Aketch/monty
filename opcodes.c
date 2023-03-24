@@ -29,12 +29,19 @@ void pop(stack_t **stack, unsigned int line_number)
 		free(line);
 		exit(EXIT_FAILURE);
 	}
-	if ((*stack)->next != NULL)
-		(*stack) = (*stack)->next;
-	(*stack)->prev = NULL;
-	free_list(temp);
+	*stack = temp->next;
+	free(temp);
 }
-void swap(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number)
+{
+	stack_t *head = *stack;
+	int count = list_len(head);
+	
+	if (count < 3)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+	}
+}
 void add(stack_t **stack, unsigned int line_number);
 /**
  * nop - does nothing

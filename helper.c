@@ -22,14 +22,11 @@ int _isdigit(char *c)
 
 	while (c[i])
 	{
-		if (c[i] >= '0' && /*c[i] == '1' && c[i] == '2' && c[i] == '3' && c[i] == '4'
-		&& c[i] == '5' && c[i] == '6' && c[i] == '7' && c[i] == '8' && */c[i] <= '9')
+		if (c[i] >= '0' && c[i] <= '9')
 			return (1);
 		i++;
-	}/*
-	if (c >= '0' && c <= '9')
-		return 1;
-	*/return (0);
+	}
+	return (0);
 }
 /**
  * lexer - tokenize string

@@ -1,10 +1,12 @@
-### Stacks, Queues - LIFO, FIFO
+# Stacks, Queues - LIFO, FIFO
+The goal of this project is to create an intepreter for Monty ByteCode files.
 ## Description
-This repository contains implementations of stack and queue operations such as push and pop
-## Case Implementation
+### The Monty language
+Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it e.g push, pall which are, in essence, stack operations.
+## Case Implementation: 
 > Usage: monty filename
 
-Where path to the file containing Monty byte code
+Where 'filename' path to the file containing Monty byte code
 
 > $cat -e bytecodes/00.m
 
@@ -26,4 +28,3 @@ pall$
 
 ## Authors
 Nataly-Aketch <nataliebeckie@gmail.com>
-Ranci-18 <wanyoike39@gmail.com>
