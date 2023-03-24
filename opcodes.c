@@ -19,8 +19,8 @@ void pint(stack_t **stack, unsigned int line_number)
  * @stack: linked list
  * @line_number: line number
  */
-void pop(stack_t **stack, unsigned int line_number)
-{
+void pop(stack_t **stack, unsigned int line_number);
+/*{
 	stack_t *temp = *stack;
 
 	if (!(*stack))
@@ -29,10 +29,11 @@ void pop(stack_t **stack, unsigned int line_number)
 		free(line);
 		exit(EXIT_FAILURE);
 	}
-	(*stack) = (*stack)->next;
+	if ((*stack)->next != NULL)
+		(*stack) = (*stack)->next;
 	(*stack)->prev = NULL;
-	free(temp);
-}
+	free_list(temp);
+}*/
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 /**

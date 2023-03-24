@@ -39,6 +39,7 @@ typedef struct instruction_s
 } instruction_t;
 char *line;
 char **lexer(char *line);
+int check(char *str);
 void print_l(stack_t *h);
 int _isdigit(char *c);
 void push(stack_t **stack, unsigned int line_number);

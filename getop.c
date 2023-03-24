@@ -6,7 +6,6 @@
  */
 void (*get_func(char *str))(stack_t**, unsigned int)
 {
-	stack_t *stack = NULL;
 	instruction_t op[] = {
 			{"pall", pall},
 			{"push", push},
@@ -16,22 +15,25 @@ void (*get_func(char *str))(stack_t**, unsigned int)
 			{NULL, NULL},
 	};
 	int i = 0;
-	unsigned int line_no = list_len(stack);
 
 	for (; op[i].opcode; i++)
 	{
 		if (strcmp(op[i].opcode, str) == 0)
 			return (op[i].f);
 	}
+	return (0);
+}
+/**
+ * check - check is command exists
+ * @str: command to check
+ * Return: -1 if not found 0 if found
+ */
+int check(char *str)
+{
 	if ((strcmp("push", str) != 0) && (strcmp("pall", str) != 0) &&
 	(strcmp("pint", str) != 0) && (strcmp("pop", str) != 0) &&
 	(strcmp("swap", str) != 0) && (strcmp("add", str) != 0) &&
 	(strcmp("nop", str) != 0))
-	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", line_no, str);
-		free(str);
-		free(line);
-		exit(EXIT_FAILURE);
-	}
+		return (-1);
 	return (0);
 }

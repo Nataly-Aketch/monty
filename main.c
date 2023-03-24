@@ -27,9 +27,14 @@ int main(int argc, char *argv[])
 	{
 		strcpy(line_cpy, line);
 		av = lexer(line_cpy);
-		len = list_len(head);
 		if (!av[0])
 			continue;
+		if (check(av[0]) == -1)
+		{
+			fprintf(stderr, "L%d: unknown instruction %s\n", len, av[0]);
+			exit(EXIT_FAILURE);
+		}
+		len = list_len(head);
 		(*get_func(av[0]))(&head, len);
 		free(av);
 	}
@@ -51,7 +56,7 @@ void push(stack_t **stack, unsigned int line_number)
 	int data;
 
 	av = lexer(line);
-	if ((av[1] == NULL || _isdigit(av[1]) != 1))
+	if ((av[1] == NULL || _isdigit(av[1]) == 0))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free(av[0]);
