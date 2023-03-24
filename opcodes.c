@@ -8,19 +8,24 @@ void pint(stack_t **stack, unsigned int line_number)
 {
 	if (!(*stack))
 	{
-		fprintf(stderr, "L<%d>: can't pint, stack empty\n", line_number);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 		free(line);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*stack)->n);
 }
+/**
+ * pop - deletes first node
+ * @stack: linked list
+ * @line_number: line number
+ */
 void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = *stack;
 
 	if (!(*stack))
 	{
-		fprintf(stderr, "L<%d>: can't pop an empty stack\n", line_number);
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
 		free(line);
 		exit(EXIT_FAILURE);
 	}

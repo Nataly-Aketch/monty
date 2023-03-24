@@ -39,12 +39,12 @@ char **lexer(char *str)
 	int i = 0;
 	char *token;
 
-	token = strtok(str, " \n");
+	token = strtok(str, " \t\r\n");
 	while (token)
 	{
 		av[i] = token;
 		i++;
-		token = strtok(NULL, " \n");
+		token = strtok(NULL, " \t\r\n");
 	}
 	av[i] = NULL;
 	return (av);

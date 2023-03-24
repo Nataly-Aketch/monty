@@ -28,7 +28,7 @@ void (*get_func(char *str))(stack_t**, unsigned int)
 	(strcmp("swap", str) != 0) && (strcmp("add", str) != 0) &&
 	(strcmp("nop", str) != 0))
 	{
-		fprintf(stderr, "L<%d>: unknown instruction <%s>\n", line_no, str);
+		fprintf(stderr, "L%d: unknown instruction %s\n", line_no, str);
 		free(str);
 		free(line);
 		exit(EXIT_FAILURE);
