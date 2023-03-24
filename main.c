@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
 	{
 		strcpy(line_cpy, line);
 		av = lexer(line_cpy);
+		len = list_len(head);
 		if (!av[0])
 			continue;
 		if (check(av[0]) == -1)
@@ -34,7 +35,6 @@ int main(int argc, char *argv[])
 			fprintf(stderr, "L%d: unknown instruction %s\n", len, av[0]);
 			exit(EXIT_FAILURE);
 		}
-		len = list_len(head);
 		(*get_func(av[0]))(&head, len);
 		free(av);
 	}
