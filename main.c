@@ -56,7 +56,7 @@ void push(stack_t **stack, unsigned int line_number)
 	int data;
 
 	av = lexer(line);
-	if ((av[1] == NULL || _isdigit(av[1]) == 0))
+	if ((av[1] == NULL || _isdigit(av[1]) != 0))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free(av[0]);

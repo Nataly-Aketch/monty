@@ -37,11 +37,15 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+/*helper functions*/
 char *line;
 char **lexer(char *line);
 int check(char *str);
 void print_l(stack_t *h);
 int _isdigit(char *c);
+int list_len(stack_t *h);
+void free_list(stack_t *head);
+/*stack operations*/
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
@@ -49,7 +53,10 @@ void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
+void divide(stack_t **stack, unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number);
+/*function pointer*/
 void (*get_func(char *str))(stack_t**, unsigned int);
-int list_len(stack_t *h);
-void free_list(stack_t *head);
 #endif

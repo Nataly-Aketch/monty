@@ -22,7 +22,7 @@ int _isdigit(char *c)
 
 	while (c[i])
 	{
-		if (c[i] >= '0' && c[i] <= '9')
+		if (c[i] < '0' || c[i] > '9')
 			return (1);
 		i++;
 	}

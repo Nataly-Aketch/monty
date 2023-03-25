@@ -39,7 +39,7 @@ void pop(stack_t **stack, unsigned int line_number)
  */
 void swap(stack_t **stack, unsigned int line_number)
 {
-	stack_t *head = *stack, *sec/* = head->next*/;
+	stack_t *head = *stack, *sec;
 	int count = list_len(head), temp;
 
 	if (count < 3)
