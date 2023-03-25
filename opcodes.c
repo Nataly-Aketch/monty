@@ -39,13 +39,15 @@ void pop(stack_t **stack, unsigned int line_number)
  */
 void swap(stack_t **stack, unsigned int line_number)
 {
-	stack_t *head = *stack, *sec = head->next;
+	stack_t *head = *stack, *sec/* = head->next*/;
 	int count = list_len(head), temp;
 
 	if (count < 3)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
 	}
+	sec = head->next;
 	temp = head->n;
 	head->n = sec->n;
 	sec->n = temp;
