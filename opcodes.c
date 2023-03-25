@@ -32,17 +32,45 @@ void pop(stack_t **stack, unsigned int line_number)
 	*stack = temp->next;
 	free(temp);
 }
+/**
+ * swap - swap top two elements in the list
+ * @stack: linked list implementation of stack
+ * @line_number: line number
+ */
 void swap(stack_t **stack, unsigned int line_number)
 {
-	stack_t *head = *stack;
+	stack_t *head = *stack, *temp, *sec = head->next;
 	int count = list_len(head);
-	
+
 	if (count < 3)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 	}
+	temp = head;
+	head = sec;
+	sec->next = temp;
 }
-void add(stack_t **stack, unsigned int line_number);
+/**
+ * add - ads top two elements
+ * @stack: linked list implementatiopn of stack
+ * @line_number: line number
+ */
+void add(stack_t **stack, unsigned int line_number)
+{
+	stack_t *head = *stack, *sec;
+	int result, count = list_len(*stack);
+
+	if (count <= 2)
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	sec = (*stack)->next;
+	result = head->n + sec->n;
+	sec->n = result;
+	*stack = sec;
+	free(head);
+}
 /**
  * nop - does nothing
  * @stack: linked list
