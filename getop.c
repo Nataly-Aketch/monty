@@ -36,7 +36,10 @@ void (*get_func(char *str))(stack_t**, unsigned int)
  */
 int check(char *str)
 {
-	if ((strcmp("push", str) != 0) && (strcmp("pall", str) != 0) &&
+
+	if (strstr(str, "#"))
+		return (1);
+	else if ((strcmp("push", str) != 0) && (strcmp("pall", str) != 0) &&
 	(strcmp("pint", str) != 0) && (strcmp("pop", str) != 0) &&
 	(strcmp("swap", str) != 0) && (strcmp("add", str) != 0) &&
 	(strcmp("nop", str) != 0) && strcmp("sub", str) != 0 &&

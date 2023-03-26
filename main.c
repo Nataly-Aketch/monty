@@ -30,6 +30,8 @@ int main(int argc, char *argv[])
 		len = list_len(head);
 		if (!av[0])
 			continue;
+		if (check(av[0]) == 1)
+			continue;
 		if (check(av[0]) == -1)
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", len, av[0]);
